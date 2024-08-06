@@ -1,0 +1,16 @@
+#include <Thermistor.h> // Inclusão da biblioteca
+
+Thermistor temp(A2); // Variável do tipo Thermistor, indicando o pino analógico (A2) em que o termistor está conectado
+
+void setup() {
+  Serial.begin(9600); // Inicializa a comunicação serial a 9600 bps
+  delay(1000); // Intervalo de 1 segundo
+}
+
+void loop() {
+  float temperature = temp.getTemp(); // Variável do tipo float que recebe o valor de temperatura calculado pela biblioteca
+  Serial.print("Temperatura: "); // Imprime o texto no monitor serial
+  Serial.print(temperature); // Imprime no monitor serial a temperatura medida
+  Serial.println(" °C"); // Imprime o texto no monitor serial
+  delay(1000); // Intervalo de 1 segundo
+}
